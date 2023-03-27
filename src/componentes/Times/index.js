@@ -5,7 +5,7 @@ function ListaSuspensa(props) {
         <div className="campo-time">
             <label>{props.label}</label>
                 <select>
-                    {props.time.map((time) => <option>{time}</option>)}
+                    {props.times.map((time) => <option>{time}</option>)}
                 </select>
         </div>
 
