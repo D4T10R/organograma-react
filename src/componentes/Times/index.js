@@ -1,16 +1,18 @@
-import './times.css'
+import './Time.css'
+import Colaborador from '../colaborador'
 
-function ListaSuspensa(props) {
+const time = (props) => {
+
+    const cssTime = { backgroundColor: props.corSecundaria}
+
     return (
-        <div className="campo-time">
-            <label>{props.label}</label>
-                <select>
-                    {props.times.map((time) => <option>{time}</option>)}
-                </select>
-        </div>
-
+        (props.colaboradores.length > 0)  && <section className='time' style={cssTime}>
+            <h3 style={{ borderColor: props.corPrimaria }} >{props.nome}</h3>  
+            <div className='colaboradores'>
+                {props.colaboradores.map( colaborador => <Colaborador nome={colaborador.nome} time={colaborador.cargo} /> )}
+            </div>
+        </section>
     )
-
 }
 
-export default ListaSuspensa
+export default time

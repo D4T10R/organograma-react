@@ -1,14 +1,13 @@
 import CampoTexto from '../CampoTexto'
-import ListaSuspensa from '../Times'
+import ListaSuspensa from '../ListaSuspensa'
 import Botao from '../Botao'
 
 import './formulario.css'
 
 import React, { useState } from 'react'
+import colaborador from '../colaborador'
 
 const Formulario = (props) => {
-
-    const item = ['front-end', 'design', 'back-end']
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
@@ -23,7 +22,13 @@ const Formulario = (props) => {
             imagem, 
             time
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
     }
+
+
 
     return (
 
@@ -53,7 +58,7 @@ const Formulario = (props) => {
                     <ListaSuspensa 
                         required={true} 
                         label="Time" 
-                        times={item} 
+                        itens={props.times} 
                         valor={time}
                         aoAlterado={valor => setTime(valor)}
                     />
